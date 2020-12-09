@@ -1,8 +1,9 @@
 import PostMessage from '../models/postMessage.js';
 //This gives access to real model.
 
-export const getPost = async(req,res)=> {
+export const getPosts = async(req,res)=> {
     //create(err)Try&Catch Block
+    console.log("get is getting hit");
     
     try{
         const postMessage = await PostMessage.find();
@@ -13,7 +14,7 @@ export const getPost = async(req,res)=> {
 }
 
 //When testing it gives empty array. 
-export const createPost = async(req,res)=>{
+export const createPosts = async(req,res)=>{
 //Need to go to frontend after to format post.
 
     const post = req.body;
