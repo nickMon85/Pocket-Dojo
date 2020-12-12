@@ -29,11 +29,13 @@ const app = express();
 
 //This declares that every will start with('/posts')
 //Test by using localhost:5000/posts
-app.use('/posts',postRoutes);
+
 
 app.use(bodyParser.json({limit:"30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit:"30mb", extended: true}));
 app.use(cors());
+
+app.use('/posts',postRoutes);
 
 const CONNECTION_URL = "mongodb+srv://Monbolds:semperfi@pocketdojo.bqqpg.mongodb.net/PocketDojo?retryWrites=true&w=majority"
 const PORT = process.env.PORT|| 5000;
